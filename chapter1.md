@@ -33,6 +33,8 @@ Nodes can relate to each other via the following verbs:
 * `dependsOn` — under this verb would be a list of nodes, knowledge and skills described in which are required for mastering ones represented by this current node. Each dependable node is represented with its `UNID`. This verb enables hierarchical structuring of the learning materials;
 * `localizes` — under thes verd would be a list of nodes, knowledge and skills described in which are same or very similar to ones represented by this current node, however written in different languages. This verb enables dynamic multilingual learning.
 
+The main body of `Node` is a webpage that is accessible via `UNID`. The page may contain learning materials and media along with the glossary.
+
 ```JSON
 {
     "title": "Node object schema",
