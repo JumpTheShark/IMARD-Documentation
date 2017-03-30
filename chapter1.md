@@ -4,7 +4,7 @@ In this document the definitions, entities and verbs working within IMARD LMS ar
 
 ## Definitions
 
-### UNID
+### UNID {#definitions-unid}
 
 UNID stands for _Unique Node Identifier_ — a unique string to find, fetch, associate with and identify by nodes.
 
@@ -12,7 +12,14 @@ UNID stands for _Unique Node Identifier_ — a unique string to find, fetch, ass
 
 ### Node
 
-The `Node` class represents learning node - a single indivisible waypoint in IMARD learning process. Somethig is a `Node` if it is a minimal specific achievable skill or a descrete obtainable knowledge.
+The `Node` class represents learning node — a single indivisible waypoint in IMARD learning process. Somethig is a `Node` if it is a minimal specific achievable skill or a descrete obtainable knowledge.
+
+Each node can have the following properties:
+
+* `UNID` — [_Unique Node Itentifier_](#definitions-unid "definitions/UNID");
+* `name`\* — brief description of the skill or knowledge that is obtainable upon examining the node;
+* `description` — more thorough description of subjects and activities involved in node's materials;
+* `resolutionStatus` —
 
 ```JSON
 {
@@ -35,12 +42,20 @@ The `Node` class represents learning node - a single indivisible waypoint in IMA
                 "unresolved"
             ]
         },
-        "dependancies": {
+        "dependsOn": {
             "type": "array",
             "items": {
                 "$ref": "definitions/UNID"
             },
             "maxItems": 4
+        },
+        "localizes": {
+            "type": "object",
+            "properties": {
+                "locale": {
+                    "$ref": "definitions/locale"
+                }
+            }
         }
     },
     "additionalItems": false,
