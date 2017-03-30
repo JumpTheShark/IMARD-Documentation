@@ -4,7 +4,7 @@ In this document the definitions, entities and verbs working within IMARD LMS ar
 
 ## Definitions
 
-### UNID {#definitions-unid}
+### UNID
 
 UNID stands for _Unique Node Identifier_ — a unique string to find, fetch, associate with and identify by nodes.
 
@@ -27,8 +27,6 @@ Nodes can relate to each other via the following verbs:
 
 * `dependsOn` —
 * `localizes` —
-
- 
 
 ```JSON
 {
@@ -65,7 +63,7 @@ Nodes can relate to each other via the following verbs:
         "localizes": {
             "type": "array",
             "items": {
-                "$ref": "definitions/UNID"
+                "$ref": "definitions/UNID
             }
         }
     },
