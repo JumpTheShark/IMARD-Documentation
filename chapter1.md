@@ -8,25 +8,30 @@ In this document the definitions, entities and verbs working within IMARD LMS ar
 
 UNID stands for _Unique Node Identifier_ — a unique string to find, fetch, associate with and identify by nodes.
 
+### Locale
+
+The _lingual locale_ that is used to recognize the language of learning materials.
+
 ## Entities
 
 ### Node
 
 The `Node` class represents learning node — a single indivisible waypoint in IMARD learning process. Somethig is a `Node` if it is a minimal specific achievable skill or a descrete obtainable knowledge.
 
-Each node can have the following qualities \(starred ones are required by default\):
+Each node can have the following qualities:
 
-* `UNID` — [_Unique Node Itentifier_](#definitions-unid "definitions/UNID"), may be absent for the `unresolved` nodes \(see below\);
-* `name`\* — brief description of the skill or knowledge that is obtainable upon examining the node;
-* `description`\* — more thorough description of subjects and activities involved in node's materials;
-* `resolutionStatus`\* — tells whether are there materials accessible via IMARD node behind the described name and description. Each node can be in one of two options of `resolutionStatus`:
-  * `resolved` — there are actual learning materials behind given `name` and `description`. The resolved status guarantees that one can access a working learning module via `UNID` and it would answer to the given properties, so in this case a valid `UNID` is required;
+* `UNID` — [_Unique Node Itentifier_](#definitions-unid "definitions/UNID");
+* `locale` — [_lingual locale_](#locale);
+* `name` — brief description of the skill or knowledge that is obtainable upon examining the node;
+* `description` — more thorough description of subjects and activities involved in node's materials;
+* `resolutionStatus` — tells whether are there materials accessible via IMARD node behind the described name and description. Each node can be in one of two options:
+  * `resolved` — there are actual learning materials behind given `name` and `description`. The resolved status guarantees that one can access a working learning module via `UNID` and it would answer to the given properties;
   * `unresolved` — there are no available materials to answer given `name` and `description` within IMARD system yet.
 
 Nodes can relate to each other via the following verbs:
 
-* `dependsOn` —
-* `localizes` —
+* `dependsOn` — under this verb would be a list of nodes, knowledge and skills described in which are required for mastering ones represented by this current node. Each dependable node is represented with its `UNID`. This verb enables hierarchical structuring of the learning materials;
+* `localizes` — under thes verd would be a list of nodes, knowledge and skills described in which are same or very similar to ones represented by this current node, however written in different languages. This verb enables dynamic multilingual learning.
 
 ```JSON
 {
@@ -34,6 +39,9 @@ Nodes can relate to each other via the following verbs:
     "type": "object",
     "properties": {
         "UNID": { "$ref": "definitions/UNID"},
+        "locale": {
+            "$ref": "definitions/locale"
+        },
         "name": {
             "type": "string",
             "description": "Briefly describes skill or knowledge obtainable by a student upon examining the node"
@@ -57,9 +65,6 @@ Nodes can relate to each other via the following verbs:
             },
             "maxItems": 4
         },
-        "locale": {
-            "$ref": "definitions/locale"
-        },
         "localizes": {
             "type": "array",
             "items": {
@@ -69,7 +74,7 @@ Nodes can relate to each other via the following verbs:
     },
     "additionalItems": false,
     "required": [
-        "name", "description", "resolutionStatus"
+        "name", "description", "resolutionStatus", "locale"
     ]
 }
 ```
