@@ -29,7 +29,7 @@ The `Node` class represents learning node - a single indivisible waypoint in IMA
             "description": "More thorough description of subjects and activities involved in node's materials"
         },
         "resolutionStatus": {
-            "type": "string"
+            "type": "string",
             "enum": [
                 "resolved",
                 "unresolved"
@@ -42,7 +42,7 @@ The `Node` class represents learning node - a single indivisible waypoint in IMA
             },
             "maxItems": 4
         }
-    }
+    },
     "additionalItems": false,
     "required": [
         "name", "resolutionStatus"
