@@ -1,3 +1,4 @@
-# My Awesome Book
+# IMARD Documentation
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+Here be a collection of documents, drafts and schemes to describe the working principles behind IMARD learning tools and the concepts of Assisted Progressive Learning.
+
