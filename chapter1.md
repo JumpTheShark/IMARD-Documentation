@@ -68,7 +68,7 @@ Nodes can relate to each other via the following verbs:
         "localizes": {
             "type": "array",
             "items": {
-                "$ref": "definitions/UNID
+                "$ref": "definitions/UNID"
             }
         }
     },
