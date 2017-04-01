@@ -4,7 +4,7 @@
 
 1. Back-end сервер Learning management system (LMS Back-end)
 	+ [Программа-сервер](#LMS_Backend)
-	+ [База данных (LMS DB)](#LMS_DB) **(для чего?)**
+	+ [База данных (LMS DB)](#LMS_DB)
 2.Front-end сервер Learning management system (LMS Front-end)
 	+ [Программа-сервер](#LMS_Frontend)
 3. Сервер Module storage (MS)
