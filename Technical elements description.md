@@ -5,7 +5,7 @@
 1. Back-end сервер Learning management system (LMS Back-end)
 	+ [Программа-сервер](#LMS_Backend)
 	+ [База данных (LMS DB)](#LMS_DB)
-2.Front-end сервер Learning management system (LMS Front-end)
+2. Front-end сервер Learning management system (LMS Front-end)
 	+ [Программа-сервер](#LMS_Frontend)
 3. Сервер Module storage (MS)
 	+ [Программа-сервер](#MS_Backend)
@@ -25,7 +25,7 @@
 
 Также back-end LMS отвечает за предоставление информации о пользователе, если последний, в свою очередь, является авторизованным. Сессия при этом не хранится.
 
-##### <a name="LMS_DB"></a> База данных (LMS DB) (для чего?)
+##### <a name="LMS_DB"></a> База данных (LMS DB)
 
 *Coming soon!*
 
