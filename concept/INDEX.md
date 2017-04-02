@@ -5,14 +5,23 @@
 *Возможно, есть смысл смутировать LMS и Learning Storage в один базовый эелемент*
 Сервис, предоставляющий пользователю доступ к единичным модулям напрямую, выстраивающий иерархический план обучения из нескольких модулей в соответствии с запросом пользователя, а также собирающий статистику процесса обучения.
 
-[Research](#)
+[Исследование](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/research.md)
 
-[Техническое задание](#)
+[Техническое задание](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/terms-of-reference.md)
 
-[Пояснительная записка](#)
+[Пояснительная записка](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/terms-of-reference.md)
 
 ### Пользовательские истории
- - [LMS-1](#)
+ - [\[LMS-1\] - brief description](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/user-stories/LMS-1.md)
 
 ## IMARD Authoring tools
 Серви, позволяющий пользователю получить доступ к единичным модулям напрямую, видеть их свойства и реляции, создавать новые модули и предлагать редакции существующих, а также делать готовые модули доступными внутрти IMARD LMS.
+
+[Исследование](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/research.md)
+
+[Техническое задание](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/terms-of-reference.md)
+
+[Пояснительная записка](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/terms-of-reference.md)
+
+### Пользовательские истории
+ - [\[LMS-1\] - brief description](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/user-stories/AT-1.md)

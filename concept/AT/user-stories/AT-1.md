@@ -1,4 +1,4 @@
-# [LMS-1] - brief description
+# [AT-1] - brief description
 Thorough description
 
 ### Preconditions
