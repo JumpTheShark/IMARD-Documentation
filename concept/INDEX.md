@@ -24,4 +24,4 @@
 [Пояснительная записка](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/terms-of-reference.md)
 
 ### Пользовательские истории
- - [\[LMS-1\] - brief description](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/user-stories/AT-1.md)
+ - [\[AT-1\] - brief description](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/user-stories/AT-1.md)
