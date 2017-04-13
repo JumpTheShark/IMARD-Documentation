@@ -110,7 +110,7 @@ The main body of `Node` is a webpage that is accessible via `UNID`. The page may
 ### Hierarchy
 `Hierarchy` is a tree of several interconnected instances of `Node` class described in [JSON Graph Forman (JGF)](http://jsongraphformat.info). Although a `Hierarchy` should be valid against the [JGF v3.0 Schema](http://jsongraphformat.info/child-schemas/bel-json-graph-3.0.schema.json) we provide an adjusted version of the same schema definitions here. Things to note in this:
 
- - `"metadata"` is always `null`. JGF reserves this property solely for biological data, it has no use here;
+ - `"metadata"` is always `null`. JGF reserves this property solely for biological data, it is of no use in scope of this API;
  - `"items"` array can contain simple objects linked to nodes via UNID as well as fully-described nodes;
  - Both `"dependsOn"` and `"localizes"` verbs are supported as `"relation"` options so we could support multilingual learning experience.
 
