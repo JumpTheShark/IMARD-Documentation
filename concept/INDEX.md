@@ -1,27 +1,37 @@
-# Документ-концепция
-Цель, область применения, определения. Здесь пишем про то, что мы описываем на самом деле техническую реализацию Assisted Progressive Learning (ссылка на документное описание, че это ваще такое.)
+# Concept
+Here  be concept and technical descriptions of tools and implementations for Assisted Progressive Learning methodology.
 
-## IMARD LMS
-*Возможно, есть смысл смутировать LMS и Learning Storage в один базовый эелемент*
-Сервис, предоставляющий пользователю доступ к единичным модулям напрямую, выстраивающий иерархический план обучения из нескольких модулей в соответствии с запросом пользователя, а также собирающий статистику процесса обучения.
+## Learning Management System (APL LMS)
+Web-service that provides end users with access to learning materials required for achieving various study objectives.
 
-[Исследование](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/research.md)
+In accordance with Progressive Learning methodology, each one of these individual learning materials represents a single non-divisible study objective. For futher reference we'll call a single study objective such as this along with learning materials associated with it a _node_. 
 
-[Техническое задание](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/terms-of-reference.md)
+Service provides not only access to individual nodes, but also the possibility to automatically calculate an ordered set of learning materials required to understand and master skills and knowledge represented in them. Such ordered set is represented as a _learning tree_ where multiple nodes are connected to each other in a way to form a coherent and straightforward learning experience.
 
-[Пояснительная записка](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/terms-of-reference.md)
+From the description of Progressive Learning method:
+>3. Form an ordered set of all the knowledge and skills required for achieving the chosen study objective and nothing more;
 
-### Пользовательские истории
- - [\[LMS-1\] - brief description](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/user-stories/LMS-1.md)
+The main goal of LMS in scope of practicing Progressive Learning is to make this step easier for the learner by offloading the tedious task of collecting and organizing materials to an automated service, as well as gather the thorough statistics to analyze learning process in detail.
 
-## IMARD Authoring tools
-Серви, позволяющий пользователю получить доступ к единичным модулям напрямую, видеть их свойства и реляции, создавать новые модули и предлагать редакции существующих, а также делать готовые модули доступными внутрти IMARD LMS.
+[Research](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/research.md)
 
-[Исследование](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/research.md)
+[Terms of reference](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/terms-of-reference.md)
 
-[Техническое задание](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/terms-of-reference.md)
+[Clarifications](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/clarifications.md)
 
-[Пояснительная записка](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/terms-of-reference.md)
+### User stories
+ - [\[LMS-1\] - Registering new node](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/LMS/user-stories/LMS-1.md)
 
-### Пользовательские истории
+## Authoring Tools (APL AT)
+Web-service that provides a set of tools for authoring, co-wrighting, versioning, classificating, reviewing and publishing learning nodes.
+
+Such service would allow authors to access single nodes, review and them, participate in discussions, form corrections and suggestions as well as wrighting completely new learning nodes, specifying their objectives, subjects and relations to other nodes.
+
+[Research](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/research.md)
+
+[Terms of reference](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/terms-of-reference.md)
+
+[Clarifications](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/clarifications.md)
+
+### User stories
  - [\[AT-1\] - brief description](https://github.com/JumpTheShark/IMARD-Documentation/blob/concept/concept/AT/user-stories/AT-1.md)
