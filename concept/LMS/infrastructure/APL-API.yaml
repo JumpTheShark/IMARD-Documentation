@@ -14,20 +14,10 @@ info:
     #### Locale
     The _lingual locale_ that is used to recognize the language of learning materials. 
     #### Node
-    The `Node` class represents learning node — a single indivisible waypoint in IMARD learning process. Somethig is a `Node` if it is a minimal specific achievable skill or a descrete obtainable knowledge.
-    Each node can have the following qualities:
-    * `id` — _Unique Node Itentifier_;
-    * `locale` — _lingual locale_;
-    * `title` — brief description of the skill or knowledge that is obtainable upon examining the node;
-    * `description` — more thorough description of subjects and activities involved in node's materials;
-    * `resolutionStatus` — tells whether are there materials accessible via IMARD node behind the described name and description. Each node can be in one of two options:
-      * `resolved` — there are actual learning materials behind given `name` and `description`. The resolved status guarantees that one can access a working learning module via `UNID` and it would answer to the given properties;
-      * `unresolved` — there are no available materials to answer given `name` and `description` within IMARD system yet.
-    
-    Nodes can relate to each other via the following verbs:
-    
-    * `dependsOn` — under this verb would be a list of nodes, knowledge and skills described in which are required for mastering ones represented by this current node. Each dependable node is represented with its `UNID`. This verb enables hierarchical structuring of the learning materials;
-    * `localizes` — under thes verd would be a list of nodes, knowledge and skills described in which are same or very similar to ones represented by this current node, however written in different languages. This verb enables dynamic multilingual learning.
+    The `Node` class represents learning node — a single indivisible waypoint in IMARD learning process. Somethig is a `Node` if it is a minimal specific achievable skill or a descrete obtainable knowledge. The `Node` class extends [`CreativeWork` class](http://schema.org/CreativeWork) 
+    The fileds `dependsOn` and `translationOfWork` describe different relations between nodes:
+    * `dependsOn` — \[URIs of IMARD nodes\] a certain degree of fluency in which is required for mastery of this node. This property is added onto an existing `CreativeWork` class;
+    * `translationOfWork` — \[URIs of IMARD nodes\] of which this node is a localization. This property makes possible to suggest learnin materials for multilingual students.
     
     The main body of `Node` is a webpage that is accessible via `UNID`. The page may contain learning materials and media along with the glossary.
     #### Hierarchy
@@ -89,60 +79,85 @@ definitions:
     title: Unique identificator
     description: URI of a IMARD learnin node
     type: string
-    
-    
-  locale:
-    title: Locale
-    description: Describes to l10n of the learning node
-    type: string
-    enum:
-      - RU-ru
-      - EN-en
   
+  Date:
+    title: Date
+    type: object
+    description: Instance of [Date](http://schema.org/Date) or [DateTime](http://schema.org/DateTime)
+    
   node:
     title: IMARD learning node
-    description: A single indivisible waypoint in IMARD learning process
+    description: A single indivisible waypoint in IMARD learning process, inherits from [CreativeWork](http://schema.org/CreativeWork)
     type: object
     properties:
       id:
-        "$ref": "#/definitions/UNID"
-      locale:
-        "$ref": "#/definitions/locale"
-      title:
+        $ref: "#/definitions/UNID"
+      aggregateRating:
+        type: object
+        description: An instance of [AggregateRating](http://schema.org/AggregateRating)
+      author:
+        type: object
+        description: An instance of [Person](http://schema.org/Person) or [Organization](http://schema.org/Organization)
+      language:
+        type: string
+        description: language in which the publication is written, an instance of [Language](http://schema.org/Language) class
+      encoding:
+        type: string
+        description: encoding
+      name:
         type: string
         description: Briefly describes skill or knowledge obtainable by a student upon
           examining the node
-      description:
+      alternativeHeadline:
+        type: string
+        description: A secondary title
+      about:
         type: string
         description: More thorough description of subjects and activities involved in
           node's materials
-      resolutionStatus:
+      accessMode:
         type: string
-        description: Tells the system whether are there materials accessible via IMARD
-          node behind the described name and description
+        description: The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Filled out automatically by AT
         enum:
-        - resolved
-        - unresolved
+          - auditory
+          - tactile
+          - textual
+          - visual
+          - colorDependent
+          - chartOnVisual
+          - chemOnVisual
+          - diagramOnVisual
+          - mathOnVisual
+          - musicOnVisual
+          - textOnVisual
+      releaseEvent:
+        type: object
+        description: Describes an event when the module was released in the LMS — instance of [PublicationEvent](http://schema.org/PublicationEvent) class, `null` if the module has never been released
+      dateCreated:
+        $ref: "#/definitions/Date"
+      datePublished:
+        $ref: "#/definitions/Date"
+      url:
+        type: string
+        description: URL of a remote VCS repo
       dependsOn:
         type: array
+        description: Describes the set of modules a certain degree of fluency in which is required for mastering this one
         items:
-          "$ref": "#/definitions/UNID"
+          $ref: "#/definitions/UNID"
         maxItems: 4
-      localizes:
+      translationOfWork:
         type: array
         items:
-          "$ref": "#/definitions/UNID"
-    required:
-      - title
-      - description
-      - resolutionStatus
-      - locale
+          $ref: "#/definitions/UNID"
+          
   node-relation:
+    title: Node relation
     type: string
     description: Relation between two nodes in an APL tree
     enum:
       - dependsOn
-      - localizes
+      - translationOfWork
   
   graph: 
     title: Graph representation of an APL learning tree
