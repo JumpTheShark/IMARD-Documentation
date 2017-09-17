@@ -35,10 +35,7 @@ parameters:
 # Describe your paths here
 paths:
   # This is a path endpoint. Change it.
-  '/node/{node-title}/meta':
-    parameters:
-      - $ref: '#/parameters/node-title'
-    # This is a HTTP operation
+  '/[node-uri]/meta':
     get:
       # Describe this verb here. Note: you can use markdown
       description: |
@@ -58,9 +55,7 @@ paths:
           schema:
             $ref: "#/definitions/Error"
                 
-  '/node/{node-title}/tree':
-    parameters:
-      - $ref: "#/parameters/node-title"
+  '/[node-uri]/tree':
     get:
       description: |
         Gets a complete tree of `Node` objects with a root in a given node.
